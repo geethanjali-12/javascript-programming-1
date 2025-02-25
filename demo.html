@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    alert("student grade calculate")
+// student.js
+
+let student = {
+    id: 100,
+    name: "Sathya",
+    marks: [86, 75, 90, 85, 73], // 5 subject marks
+    total: 0,
+    percentage: 0,
+    grade: ""
+};
+
+// Calculate total marks
+student.total = student.marks.reduce((sum, mark) => sum + mark, 0);
+
+// Calculate percentage
+student.percentage = (student.total / (student.marks.length * 100)) * 100;
+
+// Determine grade
+let grade = "";
+if (student.percentage > 90) {
+    grade = "A";
+} else if (student.percentage > 80 && student.percentage <= 90) {
+    grade = "B";
+} else if (student.percentage > 70 && student.percentage <= 80) {
+    grade = "C";
+} else if (student.percentage > 60 && student.percentage <= 70) {
+    grade = "D";
+} else if (student.percentage > 50 && student.percentage <= 60) {
+    grade = "E";
+} else {
+    grade = "Fail";
+}
+student.grade = grade;
+
+// Print student details
+console.log(`Student ID: ${student.id}`);
+console.log(`Name: ${student.name}`);
+console.log(`Total Marks: ${student.total}`);
+console.log(`Percentage: ${student.percentage.toFixed(2)}%`);
+console.log(`Grade: ${student.grade}`);
+</script>
+      
